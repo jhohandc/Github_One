@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loteria</title>
+</head>
+<body>
+
+
+<script>
+
+    function sorteo (n){
+        var numero_pensado = Math.round(Math.random()* n)
+        return numero_pensado
+    }
+
+    var numero_usuario = parseInt(prompt("ingrese la cantidad de posibles opciones"));
+    var adivinanza = parseInt(prompt("ingrese el numero que quiere adivinar"));
+    var clave = sorteo(numero_usuario)
+
+
+    if (adivinanza == clave ){
+        alert("estas en lo correcto el resulatado era " + clave);
+    }else{
+        alert("te equivocaste, el numero correcto era " + clave);
+    }
+
+
+</script>
+</body>
+</html>
