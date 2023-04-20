@@ -5,16 +5,30 @@ html{
 }
 
 .contenido{
+    
     display: inline-block;
     /*border: 2px red solid;*/
     width: 50%;
     height: 400px;
-	margin-left: 10%;
+	margin-left: 5%;
 }
 
 #cajaEntradaUsuario{
     width: 95%;
-    height: 80%;
+    height: 450px;
+    background-color: rgba(0, 0, 0, 0.00);
+    border:rgba(0, 0, 0, 0.00);
+    outline: none;
+
+    color: #0A3871;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+::placeholder{
+    color: #0A3871;
 }
 
 .botonOscuro{
@@ -40,10 +54,15 @@ html{
 ul {
     list-style: none;
 }
-.aside {
+
+.cajaSalidaTexto {
     float: right;
-    width: 30%;
-    margin-right: 10%;
+    margin-right: 8%;
+}
+
+#aside_before {
+
+    width: auto;
     height: 450px;
     background: #FFFFFF;
     box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
@@ -51,7 +70,34 @@ ul {
   }
 
   .Muñeco{
-    width: 300px;
+    width: 250px;
   }
 
- 
+#aside_after{
+    background: #FFFFFF;
+    width: 370px;
+    height: 450px;
+    border-radius: 24px;
+    
+ }
+
+#aside_after textarea{
+
+    margin-top: 10%;
+    width: 80%;
+    height: 300px;
+    
+ }
+
+
+ .botonCopiar{
+    background-color: #D8DFE8;
+    color: #0A3871;
+    width: 49%;
+    height: 70px;
+    border-radius: 24px;
+    border: 1px solid #0A3871;
+    margin-left: 15%;
+
+ }
+

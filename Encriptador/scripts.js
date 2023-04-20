@@ -1,7 +1,10 @@
+document.getElementById("aside_after").style.display = "none";
 
-function encriptar(userInput){
-    // Si encuentra una vocal en el recorrido la encripta
-    // de lo contrario deja pasar la palabra y la adhiere a la cadena encripted
+function encriptar(){
+
+    // obtiene el COntenido dentor del Text area Que ingreso el Usuario
+    var userInput = document.getElementById("cajaEntradaUsuario").value;
+    
 
     var encripted = "";
 
@@ -30,6 +33,7 @@ function encriptar(userInput){
     return encripted;
 }
 
+
 function desencriptar(phrase){
 // remplaza las combinaciones clave por las vocales
     var filtrandoA = phrase.replace(/ai/g , "a");
@@ -40,14 +44,45 @@ function desencriptar(phrase){
     return filtrandoU;
 }
 
+// Funcion que cambia el display de los divs before and after Aside
+var clic = 2;
+function cambiandoCajaSalida(encriptado,desencriptado){
+    if(clic ==1){
+        document.getElementById("aside_after").style.display = "none";
+        document.getElementById("aside_before").style.display = "block";
+
+        clic = clic + 1;
+    }else{
+        document.getElementById("aside_before").style.display = "none";
+        
+        document.getElementById("aside_after").innerHTML= encriptado;
+        document.getElementById("aside_after").style.display = "block";
+        
+        clic = 1;
+    }
+}
+
+
+// Entry point:
+
+
+// obtiene el Elemnto Boton que va encriptar el contenido
+var botonOscuro = document.getElementsByClassName("botonOscuro")[0];
+
+// Crea un listener para cuando el usuario le de click
+botonOscuro.addEventListener("click",function(){
+
+    var codigoEncriptado = encriptar(); // el contenido del textArea sale del interior de a funcion
+    var codigoDesencriptado = desencriptar(codigoEncriptado);
+
+    //Cambia el estilo del Div Aside_before
+    cambiandoCajaSalida(codigoEncriptado,codigoDesencriptado);
+});
+
+
+botonOscuro.addEventListener("clic")
 
 
 
-var usuario = prompt("ingrese la palabra que desea encriptar");
 
-var codigoEncriptado = encriptar(usuario);
-var codigoDesencriptado = desencriptar(codigoEncriptado);
-
-console.log(codigoEncriptado);
-console.log(codigoDesencriptado);
 

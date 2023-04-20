@@ -9,24 +9,34 @@
 </head>
 <body>
     <div class= navegadorTop>
-        <img src="C:\Users\Usuario\Documents\Oracle_next_education\Encriptador\assets\Alura_logo.png" alt="Logo de Alura">
+        <img src="C:\Users\Usuario\Documents\Oracle_next_education\Encriptador\assets\Alura_logo.png" alt="Logo de Alura" >
     </div>
 
     <div class = "contenido">
-        
-        <input type="text" id = "cajaEntradaUsuario" placeholder="Ingrese su texto aqui">
 
+        <textarea placeholder="Ingrese su Texto aqui" id="cajaEntradaUsuario"></textarea>
         <p>"Logo Solo letras minisculas y sin acentos" </p>
         <input type="button" class = "botonOscuro" value="Encriptar">
         <input type="button" class = "botonClaro" value="Desencriptar">
     </div>
+
+
+    <div class="cajaSalidaTexto">
+        <div id="aside_before">
+            <ul>
+                <li><img src="C:\Users\Usuario\Documents\Oracle_next_education\Encriptador\assets\Muñeco.png" alt="Muñeco" class = "Muñeco"></li>
+                <li><p><strong>Ningún mensaje fue encontrado</strong><br>ingresa el texto que desees encriptar o desencriptar.</p></li>
+            </ul>
+        </div>
     
-    <div class="aside">
-        <ul>
-            <li><img src="C:\Users\Usuario\Documents\Oracle_next_education\Encriptador\assets\Muñeco.png" alt="Muñeco" class = "Muñeco"></li>
-            <li><p><strong>Ningún mensaje fue encontrado</strong><br>ingresa el texto que desees encriptar o desencriptar.</p></li>
-        </ul>
+        <div id="aside_after" >
+            <ul>
+                <li><textarea placeholder="texto de salida"> </textarea></li>
+                <li><input type="button" class="botonCopiar"value="Copiar" ></li>
+            </ul>
+        </div>
     </div>
+    
     <script src="scripts.js"></script>
 </body>
 </html>
