@@ -70,16 +70,16 @@ var botonEncriptar = document.getElementsByClassName("botonOscuro")[0];
 //inicia listener de click
 botonEncriptar.addEventListener("click",function(){
 
-    //veririficacion de que no haya contenido, para evitar lanzar funcion de encriptacion
+    //veririficacion de que la caja no este vacia, para evitar lanzar funcion de encriptacion
     let contenidoText = document.getElementById("cajaEntradaUsuario").value ;
 
     if (contenidoText.length == 0){
-        console.log("nada pasa")
+        console.log("nada pasa");
     }else{
 
         // genera el codigo encriptado
         var codigoEncriptado = encriptar();
-        document.getElementById("textarea_salida").innerHTML = codigoEncriptado;
+        document.getElementById("textarea_salida").innerHTML = codigoEncriptado;    
 
         //genera el cambio de Div
         document.getElementById("aside_before").style.display = "none";

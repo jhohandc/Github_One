@@ -3,6 +3,10 @@ html{
     box-sizing: border-box;
     background-color: #E5E5E5;
 }
+.logoNav{
+    padding-left: 2%;
+    padding-top: 10px;
+}
 
 .contenido{
     
@@ -25,10 +29,19 @@ html{
     font-weight: 400;
     font-size: 32px;
     line-height: 48px;
+    padding: 10px;
+}
+
+p {
+    height: 18px;
+    color: Gray;
+    
+
 }
 
 ::placeholder{
     color: #0A3871;
+    
 }
 
 .botonOscuro{
@@ -40,6 +53,9 @@ html{
     padding: 24px;
     border: 1px solid #0A3871;
 }
+.botonOscuro:hover{
+    background-color: #0d468c;
+}
 
 .botonClaro{
     background-color: #D8DFE8;
@@ -50,12 +66,17 @@ html{
     border: 1px solid #0A3871;
     
 }
+.botonClaro:hover{
+    background-color: #c0c8d1 ;
+}
 
 ul {
     list-style: none;
 }
 
 .cajaSalidaTexto {
+    width: 30%;
+    height: 500px;
     float: right;
     margin-right: 8%;
 }
@@ -70,14 +91,29 @@ ul {
   }
 
   .Muñeco{
-    width: 250px;
+    width: 300px;
+    height: 300px;
+    padding-top: 15%;
+    
   }
 
+.parrafo_aside{
+    font-family: Inter;
+    font-size: 18px;
+    padding-left: 10%;
+    
+    color: black;
+
+    
+    
+
+  }
 #aside_after{
     background: #FFFFFF;
     width: 370px;
     height: 450px;
     border-radius: 24px;
+    
     
  }
 
@@ -86,7 +122,19 @@ ul {
     margin-top: 10%;
     width: 80%;
     height: 300px;
-    pointer-events:none;    
+    color: #0A3871;
+    border:rgba(0, 0, 0, 0.00);
+    outline: none;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+
+ }
+
+ #aside_after textarea:hover{
+    cursor: default;
  }
 
 
@@ -99,5 +147,9 @@ ul {
     border: 1px solid #0A3871;
     margin-left: 15%;
 
+ }
+
+ .botonCopiar:hover{
+    background-color: #c0c8d1;
  }
 
