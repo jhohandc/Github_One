@@ -1,9 +1,11 @@
 document.getElementById("aside_after").style.display = "none";
 
+
 function encriptar(){
 
     // obtiene el COntenido dentor del Text area Que ingreso el Usuario
-    var userInput = document.getElementById("cajaEntradaUsuario").value;
+    var entradaCruda = document.getElementById("cajaEntradaUsuario").value;
+    var userInput = entradaCruda.toLowerCase()
     
 
     var encripted = "";
@@ -44,43 +46,75 @@ function desencriptar(phrase){
     return filtrandoU;
 }
 
-// Funcion que cambia el display de los divs before and after Aside
-var clic = 2;
-function cambiandoCajaSalida(encriptado,desencriptado){
-    if(clic ==1){
-        document.getElementById("aside_after").style.display = "none";
-        document.getElementById("aside_before").style.display = "block";
+function verificando_Limpieza(){
 
-        clic = clic + 1;
-    }else{
-        document.getElementById("aside_before").style.display = "none";
-        
-        document.getElementById("aside_after").innerHTML= encriptado;
-        document.getElementById("aside_after").style.display = "block";
-        
-        clic = 1;
+    var contenidoText = document.getElementById("cajaEntradaUsuario").value ;
+    if (contenidoText.length == 0){
+        document.getElementById("aside_before").style.display = "block";
+        document.getElementById("aside_after").style.display = "none";
     }
 }
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////
 // Entry point:
 
+//limpieza de pantalla en caso d eque no hay contenido
+setInterval(verificando_Limpieza,500);
 
-// obtiene el Elemnto Boton que va encriptar el contenido
-var botonOscuro = document.getElementsByClassName("botonOscuro")[0];
 
-// Crea un listener para cuando el usuario le de click
-botonOscuro.addEventListener("click",function(){
+// capturamos los Botones y le asignamos eventListener
 
-    var codigoEncriptado = encriptar(); // el contenido del textArea sale del interior de a funcion
-    var codigoDesencriptado = desencriptar(codigoEncriptado);
+// BOTON PARA ENCRIPTAR
+var botonEncriptar = document.getElementsByClassName("botonOscuro")[0];
+//inicia listener de click
+botonEncriptar.addEventListener("click",function(){
 
-    //Cambia el estilo del Div Aside_before
-    cambiandoCajaSalida(codigoEncriptado,codigoDesencriptado);
+    //veririficacion de que no haya contenido, para evitar lanzar funcion de encriptacion
+    let contenidoText = document.getElementById("cajaEntradaUsuario").value ;
+
+    if (contenidoText.length == 0){
+        console.log("nada pasa")
+    }else{
+
+        // genera el codigo encriptado
+        var codigoEncriptado = encriptar();
+        document.getElementById("textarea_salida").innerHTML = codigoEncriptado;
+
+        //genera el cambio de Div
+        document.getElementById("aside_before").style.display = "none";
+        document.getElementById("aside_after").style.display = "block";
+    }
+
+    
 });
 
 
-botonOscuro.addEventListener("clic")
+//BOTON PARA DESENCRIPTAR
+var botonDesencriptar = document.getElementsByClassName("botonClaro")[0];
+//inicia listener de click
+botonDesencriptar.addEventListener("click",function(){
+
+    var entradaUsuario =document.getElementById("cajaEntradaUsuario").value;
+    document.getElementById("textarea_salida").innerHTML = entradaUsuario;
+    
+})
+
+
+//BOTON PARA COPIAR
+var botonCopiar = document.getElementsByClassName("botonCopiar")[0];
+
+botonCopiar.addEventListener("click", function(){
+
+    var contenidoCaja = document.getElementById("textarea_salida");
+    
+    contenidoCaja.select();
+    contenidoCaja.setSelectionRange(0,99999);
+    document.execCommand("copy");
+
+})
+
+
 
 
 

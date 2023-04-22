@@ -86,7 +86,7 @@ ul {
     margin-top: 10%;
     width: 80%;
     height: 300px;
-    
+    pointer-events:none;    
  }
 
 
