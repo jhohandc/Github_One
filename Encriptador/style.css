@@ -3,12 +3,27 @@ html{
     box-sizing: border-box;
     background-color: #E5E5E5;
 }
+
+
+.navegadorTop h1{
+    display: inline-block;
+    margin-left: 6%;
+    color: #0A3871;
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+
 .logoNav{
-    padding-left: 2%;
+
+    float: right;
+    margin-right: 9%;
     padding-top: 10px;
 }
 
 .contenido{
+    
     
     display: inline-block;
     /*border: 2px red solid;*/
@@ -18,8 +33,9 @@ html{
 }
 
 #cajaEntradaUsuario{
+    
     width: 95%;
-    height: 450px;
+    height: 400px;
     background-color: rgba(0, 0, 0, 0.00);
     border:rgba(0, 0, 0, 0.00);
     outline: none;
@@ -57,6 +73,10 @@ p {
     background-color: #0d468c;
 }
 
+.botonOscuro:active{
+    background-color:#0A3871;
+}
+
 .botonClaro{
     background-color: #D8DFE8;
     color: #0A3871;
@@ -68,6 +88,9 @@ p {
 }
 .botonClaro:hover{
     background-color: #c0c8d1 ;
+}
+.botonClaro:active{
+    background-color: #D8DFE8;
 }
 
 ul {
@@ -109,6 +132,7 @@ ul {
 
   }
 #aside_after{
+    
     background: #FFFFFF;
     width: 370px;
     height: 450px;
@@ -153,3 +177,6 @@ ul {
     background-color: #c0c8d1;
  }
 
+ .botonCopiar:active{
+    background-color: #D8DFE8;
+ }
